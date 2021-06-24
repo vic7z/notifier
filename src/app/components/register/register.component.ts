@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { GetDistrictIdService } from 'src/app/service/get-district-id.service';
 import { HttpClientService } from 'src/app/service/http-client.service';
 import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -26,12 +28,17 @@ export class RegisterComponent implements OnInit {
   fee:boolean=false;
   dosageType:boolean=false;
 
-  constructor(private toastr: ToastrService,private districtService :GetDistrictIdService,private myhttp:HttpClientService) { }
+  constructor(private toastr: ToastrService,
+    private districtService :GetDistrictIdService,
+    private myhttp:HttpClientService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
   
   onSubmit(form){
+    
+
      const newUser1=form.value;
 
     if (!(this.phonergx.test(newUser1.phoneNo) && newUser1.userName && newUser1.district_id && this.pinrgx.test(newUser1.pincode) && newUser1.age)) {
@@ -65,7 +72,9 @@ export class RegisterComponent implements OnInit {
       console.log(newUser1);
 
       this.myhttp.SendData(newUser1).subscribe(
-        (user:any)=>{this.response=user},
+        (user:any)=>{this.response=user;
+        this.router.navigate(['/data'],{state:{user}});
+        },
         (err)=>console.log(err.status));
         console.log(this.response)
       // form.reset();

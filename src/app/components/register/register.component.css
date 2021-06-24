@@ -157,3 +157,14 @@ input::-webkit-inner-spin-button {
   margin-left: 10px;
   padding-right: 5px;
 }
+body {
+  align-items: center;
+  background-color: #15172b;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: -1em;
+  padding: 0px;
+
+  overflow: hidden;
+}

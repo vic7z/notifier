@@ -4,6 +4,8 @@ import { FormsModule,FormGroup } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MatSelectModule } from '@angular/material/select';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,7 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     BrowserAnimationsModule,
     MatSelectModule,
+    HttpClientModule,
 	  ToastrModule.forRoot()
   ],
   providers: [],

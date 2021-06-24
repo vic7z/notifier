@@ -3,7 +3,7 @@
     <div class="title">Welcome</div>
     <div class="subtitle">Let's create your account!</div>
 
-    <form #userForm ="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <form #userForm ="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="input-container ic1">
       <input name="userName" [(ngModel)]= "newUser.userName" class="input" type="text" placeholder=" " />
       <div class="cut cut-short"></div>
@@ -31,8 +31,8 @@
     </div>
       <div class="test">
         <label class="label1">Vaccine Type</label>
-        <select [(ngModel)]="test" name="test">
-          <option *ngFor="let x of vaccine" [ngValue]="x" >{{x}}</option>
+        <select [(ngModel)]="vaccine" name="vaccine">
+          <option *ngFor="let x of vaccine1" [ngValue]="x" >{{x}}</option>
         </select>
       </div>
     </div>

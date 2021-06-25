@@ -76,7 +76,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/data'],{state:{user}});
         },
         (err)=>console.log(err.status));
-        console.log(this.response)
+     
       // form.reset();
       }
     }

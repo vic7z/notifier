@@ -1,1 +1,43 @@
-<p>table works!</p>
+<table id="center">
+    <tr>
+        <!-- <th *ngFor="let col of column">
+            {{col}}
+        </th> -->
+        <th rowspan="2">Center Name</th>
+        <th rowspan="2">Address</th>
+        <th rowspan="2">Block name</th>
+        <th rowspan="2">pincode</th>
+        <th rowspan="2">fee</th>
+        <th colspan="3">session</th>
+    </tr>
+    <tr>
+        <th >Date</th>
+        <th>Available capacity</th>
+        <th>Vaccine Type</th>
+    </tr>
+    <tr *ngFor="let center of centerList">
+        <td>{{center.name}}</td>
+        <td>{{center.address}}</td>
+        <td>{{center.block_name}}</td>
+        <td>{{center.pincode}}</td>
+        <td>{{center.fee_type}}</td>
+        <td class="date">
+            <tr *ngFor="let session of center.sessions">
+                <td class="sub1" >{{session.date}}</td>
+            </tr>
+        </td>
+
+        <td >
+            <tr *ngFor="let session of center.sessions">
+                <td class="sub">{{session.available_capacity}}</td>
+            </tr>
+        </td>
+
+        <td >
+            <tr *ngFor="let session of center.sessions">
+                <td class="sub">{{session.vaccine}}</td>
+            </tr>
+        </td>
+
+    </tr>
+</table>

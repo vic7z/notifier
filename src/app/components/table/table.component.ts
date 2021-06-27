@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute} from '@angular/router';
+import { map } from 'rxjs/operators';
+import { HttpClientService } from 'src/app/service/http-client.service';
 import { User } from 'src/app/User';
 
 @Component({
@@ -10,23 +12,53 @@ import { User } from 'src/app/User';
 export class TableComponent implements OnInit {
   response:any;
   centerList:any[]=[];
+  responseData:boolean=false;
+  paramId:string=null;
+  
+
   column=["name","address","block name","pincode","fee","session"];
   session_column=["date","avilable capacity","vaccine"];
+  centerList1: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private myhttp:HttpClientService) {
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.paramId = params['id'];
+  
+  });
+  
+    if(this.paramId){
+      console.log(this.paramId);
+     this.myhttp.getCenters(this.paramId).subscribe(response=>{
+       console.log(response);
+       this.centerList1=response
+       this.update()
+     });
+     console.log(this.centerList1)
+   
+    }else{
     this.response=this.router.getCurrentNavigation().extras.state.user;
-
+    console.log(this.response)
     
-    if(!this.response){
+    if(!this.response.availableCenters){
       console.log("no data")
     }else{
       this.centerList=this.response.availableCenters;
-      console.log(this.centerList[0].sessions.vaccine)
+      this.responseData=true;
     }
+  }
 
    }
 
+  update() {
+    this.centerList=this.centerList1;
+    this.responseData=true;
+  }
+
   ngOnInit(): void {
   }
+  
 
 }

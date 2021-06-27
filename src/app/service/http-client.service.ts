@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpErrorResponse,HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpErrorResponse,HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable,of, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators'; 
 import { User } from '../User';
@@ -19,8 +19,9 @@ const httpOptions = {
 
 export class HttpClientService {
   private uri:string="http://localhost:8080/user/add";
+  private geturi:string="http://localhost:8080/user/get-center"
   public err:number;
-
+  
 
   constructor(private httpclient:HttpClient) { }
 
@@ -30,6 +31,13 @@ export class HttpClientService {
      .pipe(
        catchError(this.handleError));
   }
+
+  getCenters(userId:string){
+    let params = new HttpParams().set("id",userId); 
+    return this.httpclient.get<any>(this.geturi,{headers:headers,params:params});
+
+  }
+
 
   private extractData(res: Response) {
     let body = res;

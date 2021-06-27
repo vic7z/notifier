@@ -5,7 +5,8 @@ import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
   {path:'',component:RegisterComponent},
-  {path:'data',component:TableComponent}
+  {path:'data',component:TableComponent},
+  {path:'data/:id',component:TableComponent}
 ];
 
 @NgModule({

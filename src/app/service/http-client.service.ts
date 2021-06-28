@@ -18,8 +18,8 @@ const httpOptions = {
 })
 
 export class HttpClientService {
-  private uri:string="http://localhost:8080/user/add";
-  private geturi:string="http://localhost:8080/user/get-center"
+  private uri:string="https://potato1.azurewebsites.net/user/add";
+  private geturi:string="https://potato1.azurewebsites.net/user/get-center"
   public err:number;
   
 

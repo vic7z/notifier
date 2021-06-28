@@ -34,5 +34,5 @@ jobs:
         app-name: notifier1
         slot-name: Production
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E08A4057E2324B80B2F03E861D730EC8 }}
-        package: .
+        package: './dist/notifier'
 

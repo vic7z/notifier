@@ -1,7 +1,7 @@
 <body>
 <div class="form">
     <div class="title">Welcome</div>
-    <div class="subtitle">Let's create your account!</div>
+    <div class="subtitle">Let's get you registered!</div>
 
     <form #userForm ="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="input-container ic1">
@@ -47,7 +47,7 @@
       <div class="ckbx">
         <div class="ckbx1">
         <label class="label1" for="_checkbox">
-        include paid vaccine
+        include paid vaccines?
         </label>
         <input type="checkbox" id="_checkbox" name="fee"  [(ngModel)]="fee">
         </div>

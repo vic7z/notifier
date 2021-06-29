@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
         },
         (err)=>console.log(err.status));
      
-      form.reset();
+      // form.reset();
       }
     }
   }

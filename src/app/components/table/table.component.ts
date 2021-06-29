@@ -55,8 +55,13 @@ export class TableComponent implements OnInit {
    }
 
   update() {
-    this.centerList=this.centerList1;
-    this.responseData=true;
+    if(!this.centerList1 || this.centerList1.length==0){
+      console.log("no data")
+    }else{
+      this.centerList=this.centerList1;
+      this.responseData=true;
+    }
+  
   }
 
   ngOnInit(): void {

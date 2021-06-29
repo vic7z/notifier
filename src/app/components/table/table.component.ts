@@ -44,7 +44,7 @@ export class TableComponent implements OnInit {
     console.log(this.response)
     console.log(this.response.availableCenters.length)
 
-    if(!this.response.availableCenters || this.response.availableCenters.length==0){
+    if(!this.response.availableCenters || this.response.availableCenters.length==0 ){
       console.log("no data")
     }else{
       this.centerList=this.response.availableCenters;

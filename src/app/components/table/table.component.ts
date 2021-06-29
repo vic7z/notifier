@@ -39,10 +39,12 @@ export class TableComponent implements OnInit {
      console.log(this.centerList1)
    
     }else{
+
     this.response=this.router.getCurrentNavigation().extras.state.user;
     console.log(this.response)
-    
-    if(!this.response.availableCenters){
+    console.log(this.response.availableCenters.length)
+
+    if(!this.response.availableCenters || this.response.availableCenters.length==0){
       console.log("no data")
     }else{
       this.centerList=this.response.availableCenters;

@@ -20,6 +20,7 @@ const httpOptions = {
 export class HttpClientService {
   private uri:string="https://potato1.azurewebsites.net/user/add";
   private geturi:string="https://potato1.azurewebsites.net/user/get-center"
+  private deluri:string="https://potato1.azurewebsites.net/user/delete"
   public err:number;
   
 
@@ -35,6 +36,12 @@ export class HttpClientService {
   getCenters(userId:string){
     let params = new HttpParams().set("id",userId); 
     return this.httpclient.get<any>(this.geturi,{headers:headers,params:params});
+
+  }
+  deleteUser(userId:string){
+    let params = new HttpParams().set("id",userId); 
+    this.httpclient.delete<any>(this.deluri,{headers:headers,params:params})
+    .subscribe(res=>console.log(res))
 
   }
 

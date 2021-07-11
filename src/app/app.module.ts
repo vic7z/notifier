@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TableComponent } from './components/table/table.component';
+import { UnSubscribeComponent } from './components/un-subscribe/un-subscribe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    TableComponent
+    TableComponent,
+    UnSubscribeComponent
   ],
   imports: [
     BrowserModule,

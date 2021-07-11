@@ -64,6 +64,18 @@ export class TableComponent implements OnInit {
   
   }
 
+  unSub(){
+    if(this.paramId){
+        console.log(this.paramId)
+        this.myhttp.deleteUser(this.paramId);
+        this.router.navigate(["/bye"]);
+    }else{
+      console.log(this.response.id)
+      this.myhttp.deleteUser(this.response.id);
+      this.router.navigate(["/bye"]);
+    }
+  }
+
   ngOnInit(): void {
   }
   

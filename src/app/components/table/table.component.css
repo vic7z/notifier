@@ -220,3 +220,26 @@ h1 small {
 		opacity: .3
 	}
 }
+.unsub{
+	display: flex;
+  	vertical-align: middle;
+  	margin: 10px 0;
+	position: absolute;
+}
+.button {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 45px;
+    text-align: center;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+  
+  .button:active {
+    background-color: #06b;
+  }

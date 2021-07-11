@@ -3,7 +3,6 @@ import { User } from 'src/app/User';
 import { ToastrService } from 'ngx-toastr';
 import { GetDistrictIdService } from 'src/app/service/get-district-id.service';
 import { HttpClientService } from 'src/app/service/http-client.service';
-import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
